@@ -1,0 +1,39 @@
+{
+  "name": "jordane-masson-photography",
+  "type": "node",
+  "request": "launch",
+  "cwd": "${workspaceRoot}",
+  "version": "1.0.0",
+  "description": "Website dedicated to my website for photography",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/K1ntus/My-Portfolio-Website.git"
+  },
+  "keywords": [
+    "Girls",
+    "Who",
+    "Code",
+    "website",
+    "template",
+    "node"
+  ],
+  "author": "Jordane Masson",
+  "bugs": {
+    "url": "https://github.com/K1ntus/My-Portfolio-Website/issues"
+  },
+  "homepage": "https://github.com/K1ntus/My-Portfolio-Website#readme",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "express": "^4.14.0",
+    "http": "0.0.0",
+    "i18n": "^0.15.1",
+    "image-compare-viewer": "^1.5.0",
+    "nodemon": "^1.11.0",
+    "nunjucks": "^3.2.3"
+  }
+}

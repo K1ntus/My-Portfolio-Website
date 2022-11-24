@@ -1,0 +1,167 @@
+<!-- header.njk -->
+
+  <!-- =================
+    //// Begin header //// 
+    ======================
+    * Use class "header-show-hide-on-scroll" to hide header on scroll down and show on scroll up.
+    * Use class "header-fixed-top" to set header to fixed position.
+    * Use class "header-transparent" to set header to transparent.
+    * Use class "menu-align-left" to align menu to left.
+    * Use class "menu-align-right" to align menu to right.
+    * Use class "menu-align-center" to align menu to center (do not use with header classes!).
+    -->
+    <header id="header" class="menu-align-right">
+    
+        <!-- Begin header inner -->
+        <div class="header-inner tt-wrap"> <!-- add/remove class "tt-wrap" to enable/disable element boxed layout (class "tt-boxed" is required in <body> tag! ) -->
+    
+            <!-- Begin logo 
+            ================ -->
+            <div id="logo">
+                <a href="/" class="logo-dark"><img src="assets/img/logo-dark.png" alt="{{ __('header.logo') }}"></a>
+                <a href="/" class="logo-light"><img src="assets/img/logo-light.png" alt="{{ __('header.logo') }}"></a>
+    
+                <!-- for small screens -->
+                <a href="/" class="logo-dark-m"><img src="assets/img/logo-dark-m.png" alt="{{ __('header.logo') }}"></a>
+                <a href="/" class="logo-light-m"><img src="assets/img/logo-light-m.png" alt="{{ __('header.logo') }}"></a>
+            </div>
+            <!-- End logo -->
+    
+            <!-- ====================
+            //// Begin main menu ////
+            ===================== -->
+            <nav class="tt-main-menu">
+    
+                <!-- Begin mobile menu toggle button -->
+                <div id="tt-m-menu-toggle-btn">
+                    <span></span>
+                </div>
+                <!-- End mobile menu toggle button -->
+
+    
+                <!-- Collect the nav links for toggling 
+                ========================================
+                * Use class "tt-submenu-dark" to enable submenu dark style.
+                -->
+                <div class="tt-menu-collapse tt-submenu-dark">
+                    <ul class="tt-menu-nav">
+    
+                        <!-- Home submenu (submenu master)
+                        ==================================== -->
+                        <li class="tt-submenu-master tt-dropdown-dark">
+                            <a href="/">{{ __('header.navigation.home') }}</a>
+                        </li>
+                        <!-- End submenu (sub-master) -->
+    
+                        <!-- Portfolio submenu (submenu master)
+                        ==================================== -->
+                        <li class="tt-submenu-wrap tt-submenu-master tt-dropdown-dark">
+                            <a href="portfolio/category/all">{{ __('header.navigation.portfolio') }}</a>
+                            <ul class="tt-submenu">
+    
+                                <!-- Begin submenu
+                                =================== -->
+                                <li class="tt-submenu-wrap">
+                                    <a href="#0">{{ __('header.navigation.portfolio.albums') }}</a>
+                                    <ul class="tt-submenu">
+    
+                                        <!-- Begin submenu
+                                        =================== -->
+                                        <li class="tt-submenu-wrap">
+                                            <a href="#0">Grid</a>
+                                            <ul class="tt-submenu">
+                                                <li><a href="albums-grid.html">Grid Default</a></li>
+                                                <li><a href="albums-grid-2.html">Grid 2</a></li>
+                                                <li><a href="albums-grid-fluid.html">Grid Fluid</a></li>
+                                                <li><a href="albums-grid-fluid-2.html">Grid Fluid 2</a></li>
+                                                <li><a href="albums-grid-fluid-3.html">Grid Fluid 3</a></li>
+                                                <li><a href="albums-grid-fluid-4.html">Grid Fluid 4</a></li>
+                                                <li><a href="albums-grid-no-crop.html">Grid No Crop</a></li>
+                                                <li><a href="albums-grid-simple.html">Grid Simple</a></li>
+                                                <li><a href="albums-grid-styles.html">Grid Item Styles</a></li>
+                                            </ul> <!-- /.tt-submenu -->
+                                        </li>
+                                        <!-- End submenu -->
+    
+                                        <!-- Begin submenu
+                                        =================== -->
+                                        <li class="tt-submenu-wrap">
+                                            <a href="#0">Carousel</a>
+                                            <ul class="tt-submenu">
+                                                <li><a href="albums-carousel.html">Albums Carousel</a></li>
+                                                <li><a href="albums-carousel-no-crop.html">Carousel No Crop</a></li>
+                                                <li><a href="albums-carousel-split.html">Carousel Split</a></li>
+                                            </ul> <!-- /.tt-submenu -->
+                                        </li>
+                                        <!-- End submenu -->
+    
+                                        <!-- Begin submenu
+                                        =================== -->
+                                        <li class="tt-submenu-wrap">
+                                            <a href="#0">Archive</a>
+                                            <ul class="tt-submenu">
+                                                <li><a href="albums-archive.html">Archive Default</a></li>
+                                                <li><a href="albums-archive-fluid.html">Archive Fluid</a></li>
+                                                <li><a href="albums-archive-fluid-2.html">Archive Fluid 2</a></li>
+                                            </ul> <!-- /.tt-submenu -->
+                                        </li>
+                                        <!-- End submenu -->
+    
+                                        <li><a href="albums-one-column.html">One Column</a></li>
+                                        <li><a href="albums-one-column-fluid.html">One Column Fluid</a></li>
+                                        <li><a href="albums-slideshow.html">Slideshow + Thumb.</a></li>
+                                        <li><a href="albums-thumbnails-list.html">Thumbnails List</a></li>
+    
+                                    </ul> <!-- /.tt-submenu -->
+                                </li>
+                                <!-- End submenu -->
+    
+    
+                            </ul> <!-- /.tt-submenu -->
+                        </li>
+                        <!-- End submenu (sub-master) -->
+
+                        <!-- Services submenu (submenu master)
+                          ==================================== -->
+                          <li class="tt-submenu-wrap tt-submenu-master tt-dropdown-dark">
+                              <a href="#0">{{ __('header.navigation.services') }}</a>
+                              <ul class="tt-submenu">
+                                  <li><a href="/services/portraying">{{ __('header.navigation.services.portraying') }}</a></li>
+                                  <li><a href="/services/licensing">{{ __('header.navigation.services.image_licensing') }}</a></li>
+                                  <li><a href="/services/printing">{{ __('header.navigation.services.prints') }}</a></li>
+                                  <li><a href="/services/editing">{{ __('header.navigation.services.retouching') }}</a></li>
+                              </ul> <!-- /.tt-submenu -->
+                          </li>
+                          <!-- End submenu (sub-master) -->
+
+                          <!-- Informations submenu (submenu master)
+                          ==================================== -->
+                          <li class="tt-submenu-wrap tt-submenu-master tt-dropdown-dark">
+                              <a href="#0">{{ __('header.navigation.informations') }}</a>
+                              <ul class="tt-submenu">
+                                  <li><a href="/contact">{{ __('header.navigation.informations.contact') }}</a></li>
+                                  <li><a href="/informations/media">{{ __('header.navigation.informations.media') }}</a></li>
+                                  <li><a href="/informations/equipment">{{ __('header.navigation.informations.equipment') }}</a></li>
+                              </ul> <!-- /.tt-submenu -->
+                          </li>
+                          <!-- End submenu (sub-master) -->
+                          
+                        <!-- Aboutme submenu (submenu master)
+                            ==================================== -->
+                            <li class="tt-submenu-master tt-dropdown-dark">
+                                <a href="/about">{{ __('header.navigation.about_me') }}</a>
+                            </li>
+                            <!-- End submenu (sub-master) -->
+
+    
+                    </ul> <!-- /.tt-menu-nav -->
+                </div> <!-- /.tt-menu-collapse -->
+    
+            </nav> 
+            <!-- End main menu -->
+    
+        </div>
+        <!-- End header inner -->
+    
+    </header>
+    <!-- End header -->

@@ -1,0 +1,70 @@
+
+
+<!-- ====================
+  ///// Scripts below /////
+  ===================== -->
+
+  <!-- Core JS -->
+  <script src="assets/vendor/jquery/jquery.min.js"></script> <!-- jquery JS (https://jquery.com) -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script> <!-- bootstrap JS (http://getbootstrap.com) -->
+
+  <!-- Libs and Plugins JS -->
+  <script src="assets/vendor/animsition/js/animsition.min.js"></script> <!-- Animsition JS (http://git.blivesta.com/animsition/) -->
+  <script src="assets/vendor/jquery.easing.min.js"></script> <!-- Easing JS (http://gsgd.co.uk/sandbox/jquery/easing/) -->
+  <script src="assets/vendor/isotope.pkgd.min.js"></script> <!-- Isotope JS (http://isotope.metafizzy.co) -->
+  <script src="assets/vendor/imagesloaded.pkgd.min.js"></script> <!-- ImagesLoaded JS (https://github.com/desandro/imagesloaded) -->
+  <script src="assets/vendor/owl-carousel/js/owl.carousel.min.js"></script> <!-- Owl Carousel JS (https://owlcarousel2.github.io/OwlCarousel2/) -->
+  <script src="assets/vendor/jquery.mousewheel.min.js"></script> <!-- A jQuery plugin that adds cross browser mouse wheel support (https://github.com/jquery/jquery-mousewheel) -->
+  <script src="assets/vendor/ytplayer/js/jquery.mb.YTPlayer.min.js"></script> <!-- YTPlayer JS (more info: https://github.com/pupunzi/jquery.mb.YTPlayer) -->
+
+  <script src="assets/vendor/lightgallery/js/lightgallery-all.min.js"></script> <!-- lightGallery Plugins JS (http://sachinchoolur.github.io/lightGallery) -->
+  
+  <!-- Theme master JS -->
+  <script src="assets/js/theme.js"></script>
+
+  <!-- Template Photo Edition Slider 
+  <script src="assets/js/photo-edit-slider.js"></script>-->
+  <!-- <script src="https://unpkg.com/image-compare-viewer/dist/image-compare-viewer.min.js"></script> -->
+
+<!-- footer.njk -->
+<footer class="page-footer">
+
+  
+<!-- ============================================
+  ///// Begin footer section (footer minimal) /////
+  =================================================
+  * Use class "footer-dark" to enable dark footer.
+  * Use class "no-margin-top" if needed. 
+  -->
+  <section id="footer" class="footer-minimal no-margin-top bg-transparent">
+      <div class="footer-inner">
+          <div class="footer-container tt-wrap">
+              <div class="row">
+                  <div class="col-md-6 col-md-push-6">
+  
+                      <!-- Begin social buttons -->
+                      <div class="social-buttons">
+                        {% include "templates/partials/footer-social.njk" %}
+                      </div>
+                      <!-- End social buttons -->
+  
+                  </div> <!-- /.col -->
+  
+                  <div class="col-md-6 col-md-pull-6">
+  
+                      <!-- Begin footer copyright -->
+                      <div class="footer-copyright">
+                          <p>&copy; Jordane Masson {{ __('footer.copyright_year') }} / {{ __('footer.all_rights_reserved') }}</p>
+                          <p>Design by: <a href="https://github.com/K1ntus" target="_blank">Jordane Masson</a></p>
+                      </div>
+                      <!-- End footer copyright -->
+  
+                  </div> <!-- /.col -->
+              </div> <!-- /.row -->
+          </div> <!-- /.footer-container -->
+      </div> <!-- /.footer-inner -->
+  </section>
+  <!-- End footer section -->
+
+</footer>
+
