@@ -1,0 +1,176 @@
+<!-- header.njk -->
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WCZ6C43" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+  <!-- =================
+    //// Begin header //// 
+    ======================
+    * Use class "header-show-hide-on-scroll" to hide header on scroll down and show on scroll up.
+    * Use class "header-fixed-top" to set header to fixed position.
+    * Use class "header-transparent" to set header to transparent.
+    * Use class "menu-align-left" to align menu to left.
+    * Use class "menu-align-right" to align menu to right.
+    * Use class "menu-align-center" to align menu to center (do not use with header classes!).
+    -->
+    <header id="header" class="menu-align-right">
+    
+        <!-- Begin header inner -->
+        <div class="header-inner tt-wrap"> <!-- add/remove class "tt-wrap" to enable/disable element boxed layout (class "tt-boxed" is required in <body> tag! ) -->
+    
+            <!-- Begin logo 
+            ================ -->
+            <div id="logo">
+                <a href="/" class="logo-dark"><img src="assets/img/logo-dark.png" alt="{{ __('header.logo') }}"></a>
+                <a href="/" class="logo-light"><img src="assets/img/logo-light.png" alt="{{ __('header.logo') }}"></a>
+    
+                <!-- for small screens -->
+                <a href="/" class="logo-dark-m"><img src="assets/img/logo-dark-m.png" alt="{{ __('header.logo') }}"></a>
+                <a href="/" class="logo-light-m"><img src="assets/img/logo-light-m.png" alt="{{ __('header.logo') }}"></a>
+            </div>
+            <!-- End logo -->
+    
+            <!-- ====================
+            //// Begin main menu ////
+            ===================== -->
+            <nav class="tt-main-menu">
+    
+                <!-- Begin mobile menu toggle button -->
+                <div id="tt-m-menu-toggle-btn">
+                    <span></span>
+                </div>
+                <!-- End mobile menu toggle button -->
+
+                <!-- Begin menu tools 
+                ====================== -->
+                <div class="tt-menu-tools">
+                    <ul>
+                        <!-- Begin call to action button -->
+                        <li>
+                            <a href="/contact" class="tt-tools-button" target="_blank">{{ __('header.navigation.action.prefix') }}<span class="hide-from-sm"> {{ __('header.navigation.action.suffix') }}</span>!</a>
+                        </li>
+                        <!-- End call to action button -->
+                    </ul>
+                </div>
+                <!-- End menu tools -->
+    
+                <!-- Collect the nav links for toggling 
+                ========================================
+                * Use class "tt-submenu-dark" to enable submenu dark style.
+                -->
+                <div class="tt-menu-collapse tt-submenu-dark">
+                    <ul class="tt-menu-nav">
+    
+                        <!-- Home submenu (submenu master)
+                        ==================================== -->
+                        <li class="tt-submenu-master tt-dropdown-dark">
+                            <a href="/">{{ __('header.navigation.home') }}</a>
+                        </li>
+                        <!-- End submenu (sub-master) -->
+    
+                        <!-- Portfolio submenu (submenu master)
+                        ==================================== -->
+                        <li class="tt-submenu-wrap tt-submenu-master tt-dropdown-dark">
+                            <a href="portfolio/category/all">{{ __('header.navigation.portfolio') }}</a>
+                            <ul class="tt-submenu" id="collections">
+
+                            </ul>
+                        </li>
+                        <!-- Collections subsubmenu
+                        ==================================== -->
+                        <script>
+                            function capitalizeFirstLetter (string) {
+                                if (string != undefined)
+                                {
+                                    const words = string.split(" ");
+
+                                    for (let i = 0; i < words.length; i++) {
+                                        words[i] = words[i][0].toUpperCase() + words[i].substr(1);
+                                    }
+                                    return words.join(" ");
+                                }
+                                else
+                                {
+                                    console.error("undefined string to capitalize")
+                                }
+                                return string;
+                            }
+
+                            function formatPortfolioLabel(portfolio_name)
+                            {
+                                let result = portfolio_name;
+                                if (portfolio_name != undefined)
+                                {
+                                    result = result.replaceAll('_', ' ');
+                                    result = capitalizeFirstLetter(result);
+                                }
+                                else
+                                console.error("Unable to format portfolio label, undefined value")
+                                return result;
+                            }
+
+                            const target_ul_collection = document.getElementById('collections');
+                            const portfolios = "{{ portfolios }}".split(',')
+                            for (var i = 0; i < portfolios.length; i++)
+                            {
+                                const porfolio = portfolios[i];
+
+                                var li_entry = document.createElement('li')
+                                var entry = document.createElement('a')
+                                // entry.appendChild(document.createTextNode(portfolios[i]))
+                                
+                                entry.setAttribute('href', '/portfolio/category/' + porfolio);
+                                entry.innerHTML = formatPortfolioLabel(porfolio)
+                                li_entry.appendChild(entry)
+                                target_ul_collection.appendChild(li_entry)
+                                
+                            }
+                        </script>
+                        <!-- End subsubmenu (collections) -->
+                        <!-- End submenu (sub-master) -->
+
+                        <!-- Services submenu (submenu master)
+                          ==================================== -->
+                          <li class="tt-submenu-wrap tt-submenu-master tt-dropdown-dark">
+                              <a href="#0">{{ __('header.navigation.services') }}</a>
+                              <ul class="tt-submenu">
+                                  <li><a href="/services/portraying">{{ __('header.navigation.services.portraying') }}</a></li>
+                                  <li><a href="/services/licensing">{{ __('header.navigation.services.image_licensing') }}</a></li>
+                                  <li><a href="/services/printing">{{ __('header.navigation.services.prints') }}</a></li>
+                                  <li><a href="/services/editing">{{ __('header.navigation.services.retouching') }}</a></li>
+                              </ul> <!-- /.tt-submenu -->
+                          </li>
+                          <!-- End submenu (sub-master) -->
+
+                          <!-- Informations submenu (submenu master)
+                          ==================================== -->
+                          <li class="tt-submenu-wrap tt-submenu-master tt-dropdown-dark">
+                              <a href="#0">{{ __('header.navigation.informations') }}</a>
+                              <ul class="tt-submenu">
+                                  <li><a href="/contact">{{ __('header.navigation.informations.contact') }}</a></li>
+                                  <li><a href="/informations/media">{{ __('header.navigation.informations.media') }}</a></li>
+                                  <li><a href="/informations/equipment">{{ __('header.navigation.informations.equipment') }}</a></li>
+                              </ul> <!-- /.tt-submenu -->
+                          </li>
+                          <!-- End submenu (sub-master) -->
+                          
+                        <!-- Aboutme submenu (submenu master)
+                            ==================================== -->
+                            <li class="tt-submenu-master tt-dropdown-dark">
+                                <a href="/about">{{ __('header.navigation.about_me') }}</a>
+                            </li>
+                            <!-- End submenu (sub-master) -->
+
+    
+                    </ul> <!-- /.tt-menu-nav -->
+                </div> <!-- /.tt-menu-collapse -->
+    
+            </nav> 
+            <!-- End main menu -->
+    
+        </div>
+        <!-- End header inner -->
+    
+    </header>
+    <!-- End header -->

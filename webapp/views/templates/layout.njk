@@ -1,0 +1,19 @@
+<!-- layout.njk -->
+
+<!DOCTYPE html>
+<html lang="en">
+{% include "templates/partials/head.njk" %}
+
+<body>
+  {% include "templates/partials/header.njk" %}
+
+  <article class="content">
+    {% block content %}
+    {% endblock %}
+  </article>  
+
+  {% include "templates/partials/footer.njk" %}
+</body>
+<!-- JAVASCRIPT AT BOTTOM FOR QUICKER PAGE LOADING -->
+<script src="assets/js/scroll_to_top.js"></script>  
+</html>

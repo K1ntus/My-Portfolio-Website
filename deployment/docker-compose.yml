@@ -1,0 +1,20 @@
+version: '3.8'
+services:
+  web:
+    build:
+      context: ./../webapp/
+      dockerfile: ./Dockerfile
+      target: dev
+    volumes:
+      - ./../webapp/src:/usr/app/src
+      - ./../webapp/views:/usr/app/views
+    command: npm run start:dev
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: development
+      DEBUG: nodejs-docker-express:*
+      BUILDKIT_PROGRESS: plain
+      stdin_open: true # equivalent of -i
+      tty: true        # equivalent of -t
+    # restart: always

@@ -1,0 +1,258 @@
+{% extends "templates/layout.njk" %}
+
+{% block content %}
+
+<!-- ===========
+///// Body /////
+================
+* Use class "animsition" to enable page transition while page loads.
+* Use class "tt-boxed" to enable page boxed layout globally (affects all elements containing class "tt-wrap").
+-->
+<body id="body" class="animsition tt-boxed">
+
+
+
+	<!-- *************************************
+	*********** Begin body content *********** 
+	************************************** -->
+	<div id="body-content">
+
+
+		<!-- ====================================
+		/////// Begin blog single cection ///////
+		===================================== -->
+		<section id="blog-single-cection" class="blog-single-simple">
+			<div class="blog-single-inner tt-wrap">
+
+				<div class="row no-margin">
+
+					<!-- Content column -->
+					<div class="col-md-12 no-padding-left no-padding-right">
+
+						<!-- Begin blog single post 
+						============================= -->
+						<article class="blog-single-post lightgallery">
+
+							<!-- Begin blog single featured image -->
+							<a href="assets/img/blog/list/blog-1.jpg" class="blog-single-featured-image lg-trigger" data-exthumbnail="assets/img/blog/list/blog-1.jpg">
+								<img src="assets/img/blog/list/blog-1.jpg" alt="">
+							</a>
+							<!-- End blog single featured image -->
+
+							<!-- Begin blog single heading -->
+							<div class="blog-single-post-heading">
+								<h1 class="blog-single-post-title">{{ __('info.equipment.title') }}</h1>
+							</div>
+							<!-- End blog single heading -->
+
+							<!-- Begin blog single post inner -->
+							<div class="blog-single-post-inner">
+
+								<!-- Begin blog single attributes -->
+								<div class="blog-single-attributes">
+									<div class="row">
+										<div class="col-sm-8">
+
+											<!-- Begin blog single meta -->
+											<div class="blog-single-meta-wrap">
+
+												<!-- Blog single author avatar -->
+												<a href="" class="author-avatar pull-left bg-image" style="background-image: url(assets/img/blog/small/avatar/avatar-1.jpg);"></a>
+
+												<div class="blog-single-meta">
+													<div class="article-author">by: <a href="#">{{ __('about.firstname') }} {{ __('about.lastname') }}</a></div>
+												</div>
+
+											</div>
+											<!-- End blog single meta -->
+
+										</div> <!-- /.col -->
+
+										<div class="col-sm-4">
+
+											<!-- Begin blog single links -->
+											<ul class="blog-single-links list-unstyled list-inline">
+												<li>
+													<!-- Begin views count -->
+													<!-- <div class="blog-single-views-count" title="Post Views"><i class="fas fa-eye"></i> 924</div> -->
+													<!-- End views count -->
+												</li>
+											</ul>
+											<!-- End blog single links -->
+
+										</div> <!-- /.col -->
+									</div> <!-- /.row -->
+								</div>
+								<!-- End blog single attributes -->
+
+								<!-- Begin post content -->
+								<div class="post-content">
+
+									<p class="lead">{{ __('info.equipment.boitier') }}</p>
+									<p>{{ __('info.equipment.p_1_1') }}</p>
+									<br>
+
+									<p>{{ __('info.equipment.Canon1000D') }}</p>
+
+									<p>{{ __('info.equipment.p_1_2') }}</p>
+
+									<p>{{ __('info.equipment.Canon40D') }}</p>
+
+									<p>{{ __('info.equipment.p_1_3') }}</p>
+
+									<p>{{ __('info.equipment.Canon6DMarkII') }}</p>
+
+									<p>{{ __('info.equipment.p_1_4') }}</p>
+
+									<!-- Begin single post image -->
+									<figure class="single-post-image">
+										<a href="assets/img/blog/single/img-4.jpg" class="lg-trigger" data-exthumbnail="assets/img/blog/single/img-4.jpg" data-sub-html="<h4>Image Description</h4><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>">
+											<img src="assets/img/blog/single/img-4.jpg" alt="image">
+										</a>
+										<figcaption class="single-post-image-caption">
+											Photo by <a target="_blank" href="http://unsplash.com/">Unsplash</a>
+										</figcaption>
+									</figure>
+									<!-- End single post image -->
+
+									<br>
+
+									<p>{{ __('info.equipment.subtitle_2') }}</p>
+
+									<p>{{ __('info.equipment.p_2_1') }}</p>
+
+									<!-- Begin content carousel (https://owlcarousel2.github.io/OwlCarousel2/)
+									====================================================================
+									* Use class "nav-outside" for outside nav (requires boxed layout).
+									* Use class "nav-outside-top" for outside top nav (requires enough space at the top of the slider).
+									* Use class "nav-bottom-right" for bottom right nav.
+									* Use class "nav-rounded" for rounded nav.
+									* Use class "nav-light" to enable nav light style.
+									* Use class "dots-outside" for outside dots (requires enough space at the bottom of the slider).
+									* Use class "dots-left", "dots-right" or "dots-center-right" to align dots.
+									* Use class "dots-rounded" for rounded dots.
+									* Use class "owl-mousewheel" to enable mousewheel support.
+									* Use class "cursor-grab" to enable cursor grab icon (no effect on links!).
+									====================================================================
+									* Available carousel data attributes:
+											data-items="5".......................(items visible on desktop)
+											data-tablet-landscape="4"............(items visible on mobiles)
+											data-tablet-portrait="3".............(items visible on mobiles)
+											data-mobile-landscape="2"............(items visible on tablets)
+											data-mobile-portrait="1".............(items visible on tablets)
+											data-loop="true".....................(true/false)
+											data-margin="10".....................(space between items)
+											data-center="true"...................(true/false)
+											data-start-position="0"..............(item start position)
+											data-animate-in="fadeIn".............(fade-in animation)
+											data-animate-out="fadeOut"...........(fade-out animation)
+											data-mouse-drag="false"..............(true/false)
+											data-touch-drag="false"..............(true/false)
+											data-autoheight="true"...............(true/false)
+											data-autoplay="true".................(true/false)
+											data-autoplay-timeout="5000".........(milliseconds)
+											data-autoplay-hover-pause="true".....(true/false)
+											data-autoplay-speed="800"............(milliseconds)
+											data-drag-end-speed="800"............(milliseconds)
+											data-nav="true"......................(true/false)
+											data-nav-speed="800".................(milliseconds)
+											data-dots="false"....................(true/false)
+											data-dots-speed="800"................(milliseconds)
+									-->
+									<div class="owl-carousel dots-right dots-rounded" data-items="1" data-nav="true" data-loop="true">
+
+										<!-- Begin carousel item 
+										========================= -->
+										<a href="assets/img/blog/single/big/img-1.jpg" class="cc-item bg-image lg-trigger" style="background-image: url(assets/img/blog/single/img-1.jpg); background-position: 50% 50%;" data-exthumbnail="assets/img/blog/single/img-1.jpg"></a>
+										<!-- End carousel item -->
+
+										<!-- Begin carousel item 
+										========================= -->
+										<a href="assets/img/blog/single/big/img-2.jpg" class="cc-item bg-image lg-trigger" style="background-image: url(assets/img/blog/single/img-2.jpg); background-position: 50% 50%;" data-exthumbnail="assets/img/blog/single/img-2.jpg"></a>
+										<!-- End carousel item -->
+
+										<!-- Begin carousel item 
+										========================= -->
+										<a href="assets/img/blog/single/big/img-3.jpg" class="cc-item bg-image lg-trigger" style="background-image: url(assets/img/blog/single/img-3.jpg); background-position: 50% 50%;" data-exthumbnail="assets/img/blog/single/img-3.jpg"></a>
+										<!-- End carousel item -->
+
+									</div>
+									<!-- End content carousel -->
+
+									<p>{{ __('info.equipment.p_2_2') }}</p>
+									<br>
+									<p>{{ __('info.equipment.p_2_3') }}</p>
+
+									<blockquote>Non mauris nullam. Wisi gravida quis quisque mattis dolor. Etiam sociis turpis nesciunt sed lacus sed hendrerit diam. Accumsan varius venenatis arcu maecenas nulla. Aliquet tempus lobortis. Tortor nibh erat vel gravida est accumsan ut ad. Orci malesuada morbi. Luctus pharetra lectus.</blockquote>
+
+									<br>
+
+									<p>{{ __('info.equipment.subtitle_3') }}</p>
+
+									<p>{{ __('info.equipment.p_3_1') }}</p>
+
+									<!-- Begin Vimeo embed video -->
+									<div class="embed-responsive embed-responsive-16by9">
+										<iframe data-src="https://player.vimeo.com/video/126945693" allowfullscreen=""></iframe>
+									</div>
+									<!-- End Vimeo embed video -->
+
+								</div>
+								<!-- End post content -->
+
+								<!-- Begin blog single attributes -->
+								<div class="blog-single-attributes margin-top-60">
+									<div class="row">
+										<div class="col-sm-8">
+
+											<!-- Begin blog single tags -->
+											<div class="blog-single-tags">
+												<ul>
+													<li><span>{{ __('info.equipment.tag_label') }}:</span></li>
+													<li><a href="">#{{ __('info.equipment.tag_1') }}</a> </li> 
+													<li><a href="">#{{ __('info.equipment.tag_2') }}</a> </li>
+													<li><a href="">#{{ __('info.equipment.tag_3') }}</a></li>
+												</ul>
+											</div>
+											<!-- End blog single tags -->
+										</div> <!-- /.col -->
+									</div> <!-- /.col -->
+								</div>
+								<!-- End blog single attributes -->
+
+								<!-- Begin blog single post share -->
+								<div class="blog-single-share">
+									<ul>
+										<li class="bss-text">Share:</li>
+										<li><a href="#0" class="btn btn-social-min btn-facebook btn-sm" title="Share on facebook"><i class="fab fa-facebook-f"></i></a></li>
+										<li><a href="#0" class="btn btn-social-min btn-twitter btn-sm" title="Share on twitter"><i class="fab fa-twitter"></i></a></li>
+										<li><a href="#0" class="btn btn-social-min btn-google btn-sm" title="Share on google+"><i class="fab fa-google-plus-g"></i></a></li>
+										<li><a href="#0" class="btn btn-social-min btn-pinterest btn-sm" title="Share on pinterest"><i class="fab fa-pinterest-p"></i></a></li>
+										<li><a href="#0" class="btn btn-social-min btn-linkedin btn-sm" title="Share on linkedin"><i class="fab fa-linkedin-in"></i></a></li>
+									</ul>
+								</div>
+								<!-- End blog single post share -->
+
+							</div>
+							<!-- End blog single post inner -->
+
+						</article> 
+						<!-- End blog single post -->
+
+
+
+					</div> <!-- /.col (Content column) -->
+
+				</div> <!-- /.row -->
+
+			</div> <!-- /.blog-single-inner -->
+		</section>
+		<!-- End blog single cection -->
+
+	</div>
+	<!-- End body content -->
+
+
+
+</body>
+{% endblock %}
