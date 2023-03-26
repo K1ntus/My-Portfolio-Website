@@ -9,7 +9,7 @@ class CollectionModel
     this._collection_name = CommonFunctions.capitalizeFirstLetter(collection_name).trim()
     this._images = [];
     
-    this.buildImagesOfCollection(__dirname + '\\..\\..' + Constants.COLLECTION_ROOT_PATH)
+    this.buildImagesOfCollection(__dirname + '/../..' + Constants.COLLECTION_ROOT_PATH, collection_name)
   }
 
   getCollectionName()
@@ -24,18 +24,18 @@ class CollectionModel
 
   //  ***********************
 
-  buildImagesOfCollection(filepath)
+  buildImagesOfCollection(filepath, collection_name)
   {
-    let image_filepaths = this.getImagesFilePathList(filepath);
+    let image_filepaths = this.getImagesFilePathList(filepath, collection_name);
     image_filepaths.forEach(path => {
       path = path.replaceAll('\\', '/')
       this._images.push( new Image.ImageModel(path))
     });
   }
 
-  getImagesFilePathList(filepath)
+  getImagesFilePathList(filepath, collection_name)
   {
-    return CommonFunctions.getListOfFilesInSubdirectory(filepath + this._collection_name)
+    return CommonFunctions.getListOfFilesInSubdirectory(filepath + collection_name)
   }
 
 

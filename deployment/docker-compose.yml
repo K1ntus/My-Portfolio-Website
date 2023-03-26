@@ -17,4 +17,4 @@ services:
       BUILDKIT_PROGRESS: plain
       stdin_open: true # equivalent of -i
       tty: true        # equivalent of -t
-    # restart: always
+    restart: always
