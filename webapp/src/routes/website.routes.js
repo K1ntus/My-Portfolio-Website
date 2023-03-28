@@ -21,6 +21,7 @@ var router = express.Router()
 
 /**  Home  **/
 router.get('/', function (req, res) {
+  // console.log(req)
   res.render(path.join(__dirname + '/../../views/pages/index'), {
     params: req.params,
     portfolios: portfolio.getCollections()

@@ -66,5 +66,9 @@
 	"services.printing.20x30.subtitle": "services.printing.20x30.subtitle",
 	"services.printing.20x30.description": "services.printing.20x30.description",
 	"services.printing.20x30.types": "services.printing.20x30.types",
-	"services.printing.20x30.contour": "services.printing.20x30.contour"
+	"services.printing.20x30.contour": "services.printing.20x30.contour",
+	"header.navigation.action.prefix": "header.navigation.action.prefix",
+	"header.navigation.action.suffix": "header.navigation.action.suffix",
+	"services.printing.shipping.subheading": "services.printing.shipping.subheading",
+	"services.printing.shipping.paragraph": "services.printing.shipping.paragraph"
 }

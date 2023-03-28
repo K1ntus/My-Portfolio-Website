@@ -15,6 +15,7 @@ i18n.configure({
   // setup some locales - other locales default to en silently
   locales: ['en', 'fr'],
   queryParameter: 'lang',
+  defaultLocale : "en",
   // sets a custom cookie name to parse locale settings from
   cookie: 'lang_cookie_name',
   mustacheConfig: {
@@ -31,6 +32,7 @@ i18n.configure({
     Constants.SEPARATOR +
     'locales'
 })
+
 
 //
 // ## SimpleServer `SimpleServer(obj)`
@@ -69,6 +71,7 @@ app.use(express.static('views'))
 app.use('/services', express.static('views'))
 app.use('/portfolio/category', express.static('views'))
 app.use('/informations', express.static('views'))
+// app.use('/kibana', express.static('views'))
 // app.use(express.static(path.resolve(__dirname, 'views', 'pages')));
 // app.use(express.static(path.resolve(__dirname, 'views', 'templates')));
 
@@ -81,6 +84,7 @@ app.use('/', require('./src/routes/website.routes'))
 app.use('/services', require('./src/routes/services.routes'))
 app.use('/portfolio', require('./src/routes/portfolio.routes'))
 app.use('/informations', require('./src/routes/informations.routes'))
+// app.use('/kibana', require('./src/drivers/analytics/routes/elastic.routes'))
 // ***********************
 
 
@@ -105,6 +109,37 @@ function fill_images_path (root_dir, data_structure) {
 }
 
 // ***********************
+
+const photo_index_name = "photography"
+async function initElasticSearchIndex(index_name)
+{
+  const elasticClient = require('./src/drivers/analytics/client/elastic.client')
+  if(elasticClient.ping())
+  {
+    console.log("toto")
+    if (elasticClient.indexExists({}, {}, index_name))
+    {
+      console.log("toto")
+      if (elasticClient.initIndex({}, {}, index_name))
+      {
+        console.log("toto")
+        elasticClient.initMapping({}, {}, index_name, "client.ip", "ip")
+        elasticClient.initMapping({}, {}, index_name, "client.locale", "text")
+        elasticClient.initMapping({}, {}, index_name, "client.type", "text")
+        elasticClient.initMapping({}, {}, index_name, "client.browser", "text")
+        elasticClient.initMapping({}, {}, index_name, "client.operating_system", "text")
+        elasticClient.initMapping({}, {}, index_name, "client.request.date", "date")
+        elasticClient.initMapping({}, {}, index_name, "client.url.origin", "text")
+        elasticClient.initMapping({}, {}, index_name, "client.url.destination", "text")
+        console.log("toto")
+      }
+    }
+  }
+
+  
+}
+
+initElasticSearchIndex(photo_index_name)
 console.log('Booting up the server! Please wait until finished...')
 server.listen(
   process.env.PORT || 3000,
@@ -131,3 +166,20 @@ server.listen(
 // console.log("path: ", Constants.COLLECTION_ROOT_PATH)
 // let Collections = require('./src/models/Collection.model');
 // const collection_test = new Collections.CollectionModel('history')
+
+// KIBANA / ELK
+// curl -s -H 'Content-Type: application/json' -XPOST http://localhost:9200/simple-index/data -d @simple-message.json
+
+// let message = {type:"simple", message:"msg toto", random: "some random things"}
+// const ELK_URL = "http://localhost:9200/"
+// var request = require('request');
+
+// request.post(
+//     'http://www.yoursite.com/formpage',
+//     { json: { key: 'value' } },
+//     function (error, response, body) {
+//         if (!error && response.statusCode == 200) {
+//             console.log(body);
+//         }
+//     }
+// );

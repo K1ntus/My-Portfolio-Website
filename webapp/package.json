@@ -30,6 +30,7 @@
   "homepage": "https://github.com/K1ntus/My-Portfolio-Website#readme",
   "dependencies": {
     "cookie-parser": "^1.4.6",
+    "elasticsearch": "^16.7.3",
     "exif": "^0.6.0",
     "exif-js": "^2.3.0",
     "exifreader": "^4.11.1",
