@@ -8,6 +8,7 @@ class CollectionModel
   {
     this._collection_name = CommonFunctions.capitalizeFirstLetter(collection_name).trim()
     this._images = [];
+    this._banner_image = null;
     
     this.buildImagesOfCollection(__dirname + '/../..' + Constants.COLLECTION_ROOT_PATH, collection_name)
   }
@@ -29,7 +30,21 @@ class CollectionModel
     let image_filepaths = this.getImagesFilePathList(filepath, collection_name);
     image_filepaths.forEach(path => {
       path = path.replaceAll('\\', '/')
-      this._images.push( new Image.ImageModel(path))
+
+      if (filepath.toLowerCase().includes("main"))
+      {
+        this._banner_image = new Image.ImageModel(path)
+      }
+      else
+      {
+        console.log("Reading: " + path)
+        this._images.push( new Image.ImageModel(path))
+      }
+
+      if (this._images === null)
+      {
+        console.error("Unable to load the banner image for collection: " + collection_name)
+      }
     });
   }
 

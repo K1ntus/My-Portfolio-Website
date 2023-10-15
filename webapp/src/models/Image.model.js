@@ -60,7 +60,11 @@ class ImageModel
           const model = this.readMetadataValue(metadata, 'Model');
           const lens = this.readMetadataValue(metadata, 'LensModel');
 
-          this._image_metadata = new ImageMetadata.ImageMetadata(aperture, shutter_speed, focal_length, exposure_time, iso, date, model, lens);
+          const title = "dummy title";
+          const description = "dummy description";
+          const shopping_link = "no link";
+
+          this._image_metadata = new ImageMetadata.ImageMetadata(title, description, shopping_link, aperture, shutter_speed, focal_length, exposure_time, iso, date, model, lens);
         }
         else
         {

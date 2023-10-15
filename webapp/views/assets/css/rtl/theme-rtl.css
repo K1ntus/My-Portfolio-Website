@@ -657,8 +657,10 @@ body.tt-boxed .isotope-wrap.tt-wrap .isotope-filter.fi-to-button.fi-right {
 	}
 }
 .gli-meta > li {
-	margin-right: 5px;
-	margin-left: auto;
+	text-align: right;
+	list-style: none;
+	margin-left: 5px;
+	padding: 0;
 }
 
 /* gallery list item meta if isotope gutters enabled */

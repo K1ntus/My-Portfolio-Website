@@ -31,7 +31,7 @@
 			* Use class "fade-out-scroll-3" to enable fade out effect if page scroll.
 			* Use class "hide-ph-image" to hide page header image without removing the code.
 			-->
-			<div class="page-header-image parallax-bg-3 bg-image" style="background-image: url(assets/img/misc/page-header-bg-19.jpg);">
+			<div class="page-header-image parallax-bg-3 bg-image" style="background-image: url({{ collection._banner_image }});">
 				
 				<!-- Element cover 
 				===================
@@ -53,7 +53,7 @@
 				-->
 				<div class="page-header-caption ph-caption-xlg parallax-5 fade-out-scroll-4">
 					<h3 class="page-header-subtitle">{{album.portfolio.header.subtitle}}</h3>
-					<h1 class="page-header-title">{{ collection._collection_name }}</h1>
+					<h1 class="page-header-title">{{ collection._collection_name  | replace("-", " ") }}</h1>
 					<hr class="hr-short">
 				</div>
 				<!-- End page header caption -->
@@ -104,7 +104,7 @@
 								<div class="gl-item-image-wrap">
 
 									<!-- Begin gallery list item image inner -->
-									<a href="gallery-single-grid-fluid-2.html" class="gl-item-image-inner">
+									<a href="#" class="gl-item-image-inner"> <!-- Todo: open in wide -->
 										<div class="gl-item-image bg-image" style="background-image: url({{ image._image_path }}); background-position: 50% 50%"></div>
 										
 										<span class="gl-item-image-zoom"></span>
@@ -114,33 +114,27 @@
 									<!-- Begin gallery list item meta -->
 									<ul class="gli-meta">
 										<li>
-												<span class="fa-solid fa-aperture"></span>
-											<!-- Exposure Time -->
+											<!-- Lens Model -->
+											{{ image._image_metadata._lens_model }}
 											<div class="fav-inner">
-												<span class="fa-solid fa-aperture"></span>
+												<ion-icon name="videocam"></ion-icon>
 											</div>
-											{{ image._image_metadata._exposure_time }}
-											<!-- End Exposure Time -->
+											<!-- End Lens Model -->
 										</li>
 										<li>
 											<!-- ISO Time -->
-											<div class="fav-inner">
-												<div class="icon-heart">
-													<span class="icon-heart-empty"><i class="fa-solid fa-aperture"></i></span>
-												</div>
-											</div>
 											{{ image._image_metadata._iso }}
+											<div class="fav-inner">
+												<ion-icon name="sunny"></ion-icon>
+											</div>
 											<!-- End ISO Time -->
 										</li>
 										<li>
-											<!-- Lens Model -->
+											{{ image._image_metadata._exposure_time }}
 											<div class="fav-inner">
-												<div class="icon-heart">
-													<span class="icon-heart-empty"></span>
-												</div>
+												<ion-icon name="aperture"></ion-icon>
 											</div>
-											{{ image._image_metadata._lens_model }}
-											<!-- End Lens Model -->
+											<!-- End Exposure Time -->
 										</li>
 									</ul>
 									<!-- End gallery list item meta -->
@@ -151,8 +145,8 @@
 								<!-- Begin gallery list item info -->
 								<div class="gl-item-info">
 									<div class="gl-item-caption">
-										<h2 class="gl-item-title"><a href="gallery-single-grid-fluid-2.html">{{ image._image_name }}</a></h2>
-										<span class="gl-item-category"><a href="albums-archive-fluid-2.html">{{ image._sub_collection }}</a></span>
+										<h2 class="gl-item-title"><a href="#">{{ image._image_metadata._title }}</a></h2>
+										<span class="gl-item-category"><a href="#">{{ image._sub_collection }}</a></span> <!-- todo filters image with this category -->
 									</div>
 								</div>
 								<!-- End gallery list item info -->

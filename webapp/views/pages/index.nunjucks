@@ -69,7 +69,7 @@
 							
 							<!-- Begin carousel item 
 							========================= -->
-							<a href="gallery-single-carousel-center.html" class="cc-item">
+							<a href="portfolio/category/portraits" class="cc-item">
 
 								<!-- cc image -->
 								<div class="cc-image bg-image" style="background-image: url(assets/img/collections/portraits/main.jpg); background-position: 50% 50%;"></div>
@@ -89,7 +89,7 @@
 							
 							<!-- Begin carousel item 
 							========================= -->
-							<a href="gallery-single-carousel-center.html" class="cc-item">
+							<a href="portfolio/category/animals" class="cc-item">
 
 								<!-- cc image -->
 								<div class="cc-image bg-image" style="background-image: url(assets/img/collections/animals/main.jpg); background-position: 50% 50%;"></div>
@@ -109,10 +109,10 @@
 
 							<!-- Begin carousel item 
 							========================= -->
-							<a href="gallery-single-carousel-center.html" class="cc-item">
+							<a href="portfolio/category/astro-photography" class="cc-item">
 
 								<!-- cc image -->
-								<div class="cc-image bg-image" style="background-image: url(assets/img/collections/astro/main.jpg); background-position: 50% 50%;"></div>
+								<div class="cc-image bg-image" style="background-image: url(assets/img/collections/astro-photography/main.jpg); background-position: 50% 50%;"></div>
 
 								<!-- Begin caption 
 								===================
@@ -129,10 +129,10 @@
 
 							<!-- Begin carousel item 
 							========================= -->
-							<a href="gallery-single-carousel-center.html" class="cc-item">
+							<a href="portfolio/category/black-and-white" class="cc-item">
 
 								<!-- cc image -->
-								<div class="cc-image bg-image" style="background-image: url(assets/img/collections/black_and_white/main.jpg); background-position: 50% 50%;"></div>
+								<div class="cc-image bg-image" style="background-image: url(assets/img/collections/black-and-white/main.jpg); background-position: 50% 50%;"></div>
 
 								<!-- Begin caption 
 								===================
@@ -149,10 +149,10 @@
 
 							<!-- Begin carousel item 
 							========================= -->
-							<a href="gallery-single-carousel-center.html" class="cc-item">
+							<a href="portfolio/category/cities" class="cc-item">
 
 								<!-- cc image -->
-								<div class="cc-image bg-image" style="background-image: url(assets/img/collections/city/main.jpg); background-position: 50% 50%;"></div>
+								<div class="cc-image bg-image" style="background-image: url(assets/img/collections/cities/main.jpg); background-position: 50% 50%;"></div>
 
 								<!-- Begin caption 
 								===================
@@ -169,7 +169,7 @@
 
 							<!-- Begin carousel item 
 							========================= -->
-							<a href="gallery-single-carousel-center.html" class="cc-item">
+							<a href="portfolio/category/events" class="cc-item">
 
 								<!-- cc image -->
 								<div class="cc-image bg-image" style="background-image: url(assets/img/collections/events/main.jpg); background-position: 50% 50%;"></div>
@@ -189,7 +189,7 @@
 							
 							<!-- Begin carousel item 
 							========================= -->
-							<a href="gallery-single-carousel-center.html" class="cc-item">
+							<a href="portfolio/category/history" class="cc-item">
 
 								<!-- cc image -->
 								<div class="cc-image bg-image" style="background-image: url(assets/img/collections/history/main.jpg); background-position: 50% 50%;"></div>
@@ -206,30 +206,10 @@
 
 							</a>
 							<!-- End carousel item -->
-
-							<!-- Begin carousel item 
-							========================= -->
-							<a href="gallery-single-carousel-center.html" class="cc-item">
-
-								<!-- cc image -->
-								<div class="cc-image bg-image" style="background-image: url(assets/img/collections/macro/main.jpg); background-position: 50% 50%;"></div>
-
-								<!-- Begin caption 
-								===================
-								* Position classes: "top-left", "top-center", "top-right", "center-left", "center", "center-right", "bottom-left", "bottom-center", "bottom-right". 
-								* Size classes: "cc-caption-xs", "cc-caption-sm", "cc-caption-lg", "cc-caption-xlg", "cc-caption-xxlg".
-								-->
-								<div class="cc-caption center cc-caption-lg">
-									<h2 class="cc-title">{{ __('header.navigation.portfolio.macro')}}</h2>
-								</div>
-								<!-- End caption -->
-
-							</a>
-							<!-- End carousel item -->
 							
 							<!-- Begin carousel item 
 							========================= -->
-							<a href="gallery-single-carousel-center.html" class="cc-item">
+							<a href="portfolio/category/nature" class="cc-item">
 
 								<!-- cc image -->
 								<div class="cc-image bg-image" style="background-image: url(assets/img/collections/nature/main.jpg); background-position: 50% 50%;"></div>

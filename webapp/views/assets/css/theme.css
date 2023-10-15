@@ -2691,8 +2691,10 @@ body.iso-top-content-on .isotope .isotope-items-wrap {
 	}
 }
 .gli-meta > li {
-	display: inline-block;
+	text-align: right;
+	list-style: none;
 	margin-left: 5px;
+	padding: 0;
 }
 .gli-meta > li a {
 	font-size: 14px;
