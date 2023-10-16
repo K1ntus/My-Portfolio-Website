@@ -15,7 +15,7 @@ i18n.configure({
   // setup some locales - other locales default to en silently
   locales: ['en', 'fr'],
   queryParameter: 'lang',
-  defaultLocale : "en",
+  defaultLocale : "fr",
   // sets a custom cookie name to parse locale settings from
   cookie: 'lang_cookie_name',
   mustacheConfig: {
@@ -23,14 +23,7 @@ i18n.configure({
   },
 
   // where to store json files - defaults to './locales'
-  directory:
-    __dirname +
-    Constants.SEPARATOR +
-    'views' +
-    Constants.SEPARATOR +
-    'assets' +
-    Constants.SEPARATOR +
-    'locales'
+  directory: path.join(__dirname, "views", 'locales')
 })
 
 

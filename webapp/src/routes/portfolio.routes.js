@@ -16,8 +16,10 @@ var router = express.Router()
 
 /** Portfolio **/
 router.get('/category/all', function (req, res) {
+  const generated_collection = new CollectionsProvider.CollectionModel("*")
   res.render(path.join(__dirname + '/../../views/pages/album'), {
     params: req.params,
+    collection: generated_collection,
     portfolios: portfolio.getCollections()
   })
 })

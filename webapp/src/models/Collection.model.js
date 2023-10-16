@@ -15,12 +15,12 @@ class CollectionModel
 
   getCollectionName()
   {
-    return this._collection_name
+    return this._collection_name;
   }
 
   getCollectionImages()
   {
-    return this._images
+    return this._images;
   }
 
   //  ***********************
@@ -33,12 +33,12 @@ class CollectionModel
 
       if (filepath.toLowerCase().includes("main"))
       {
-        this._banner_image = new Image.ImageModel(path)
+        this._banner_image = new Image.ImageModel(path);
       }
       else
       {
-        console.log("Reading: " + path)
-        this._images.push( new Image.ImageModel(path))
+        console.log("Reading: " + path);
+        this._images.push( new Image.ImageModel(path));
       }
 
       if (this._images === null)
@@ -50,7 +50,15 @@ class CollectionModel
 
   getImagesFilePathList(filepath, collection_name)
   {
-    return CommonFunctions.getListOfFilesInSubdirectory(filepath + collection_name)
+    if (collection_name == "*")
+    {
+      this._collection_name = "Everything";
+      return CommonFunctions.getListOfFilesInSubdirectory(filepath)
+    }
+    else
+    {
+      return CommonFunctions.getListOfFilesInSubdirectory(filepath + collection_name)
+    }
   }
 
 

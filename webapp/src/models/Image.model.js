@@ -2,13 +2,16 @@ const Constants = require('../common/constants')
 const CommonFunctions = require('../common/functions')
 const ImageMetadata = require('./ImageMetadata.model');
 const ExifReader = require('exifreader');
+const fs = require('fs')
 
 class ImageModel 
 {
-    constructor (image_path) {
-      this._image_path = image_path
-      this._image_name = ""
-      this._sub_collection = ""
+  constructor (image_path) {
+      this._image_path = image_path;
+      this._sharp_image_path = "";
+      this._image_name = "";
+      this._image_root_path = "";
+      this._sub_collection = "";
       // this._raw_metadata = {};
       this._image_metadata = {};
 
@@ -22,8 +25,15 @@ class ImageModel
 
     buildImageAssetLink()
     {
-      this._image_path = this._image_path.split('/views')[1]
+      if (!this.isSharpImageGenerated())
+      {
+        console.log("Generating sharp image: " + this.getSharpImageFilePath() + "...")
+        // this.generateSharpImage()
+      }
 
+      this._image_root_path = this._image_path.split('/views')[0] + "/views"
+      this._sharp_image_path = this._image_root_path.split('/views')[1]
+      this._image_path = this._image_path.split('/views')[1]
     }
 
     readMetadataValue(metadata, field)
@@ -89,7 +99,7 @@ class ImageModel
         }
         else
         {
-          console.error ("Not enought segments to split for collections")
+          console.error ("Not enough segments to split for collections")
           image_collection = image_collection[image_collection.length-1]
           this._sub_collection = CommonFunctions.capitalizeFirstLetter(image_collection).trim()
         }
@@ -140,8 +150,64 @@ class ImageModel
     }
     get path ()
     {
-      return this._image_path;
+      return this._sharp_image_path;
     }
+
+    getSharpImageFilePath()
+    {
+      if (this._sharp_image_path === "")
+      {
+        this._sharp_image_path = this._image_path.replace(".jpg", "-sharp.jpg");
+        console.log("new sharp image path: " + this._sharp_image_path)
+      }
+
+      return this._sharp_image_path
+    }
+
+    isSharpImageGenerated()
+    {
+      if (!this._image_path.toLowerCase().includes("sharp"))
+      {
+        if (fs.existsSync(this.getSharpImageFilePath()))
+        {
+          console.log(this._sharp_image_path + " exists.")
+          return true;
+        }
+
+        console.log(this._sharp_image_path + " does not exist.")
+      }
+      else // Already a Sharp image
+      {
+        return true;
+      }
+      return false;
+    }
+
+    async generateSharpImage()
+    {
+      try
+      {
+        const sharp = require('sharp');
+        const buf = await fs.promises.readFile(this._image_path);
+        await sharp(buf)
+            .resize(600, 400, {
+              fit: 'contain',
+              background: { r: 255, g: 255, b: 255, alpha: 1.0 }
+            })
+            .toFormat("jpeg", { mozjpeg: true})
+            .toFile(this.getSharpImageFilePath())
+            .catch(err =>{
+              console.log("err: ",err);  
+              console.log("For target file: " + this.getSharpImageFilePath())  
+            });
+        // fs.unlink(this.getSharpImageFilePath(), ()  => { })
+      }
+      catch (error)
+      {
+        console.log(error)
+      }
+    }
+
     get collection ()
     {
       return this.collection_name;
